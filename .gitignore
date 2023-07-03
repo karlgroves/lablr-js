@@ -1,0 +1,36 @@
+node_modules
+.project
+*.log
+*.pid
+./log/*.log
+./run/*
+.DS_Store
+.settings
+atlassian-ide-plugin.xml
+.RUNNING_REVISION
+pm2.json
+
+### IntelliJ ###
+.idea
+*.iml
+
+### vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+### Emacs ###
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+client/plugins
+lib/tenon-plugin
+lib/vendor
+lib/tenon

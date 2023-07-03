@@ -1,0 +1,25 @@
+{
+  "name": "lablr-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lablr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:karlgroves/lablr-js.git"
+  },
+  "author": {
+    "name": "Karl Groves",
+    "email": "karlgroves@gmail.com",
+    "url": "https://www.karlgroves.com"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "express": "^4.18.2",
+    "microtime": "^3.1.1"
+  }
+}
