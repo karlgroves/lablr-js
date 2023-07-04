@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-
 
   /**
    *
@@ -93,9 +91,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     return true;
   };
-
-
-
 
   /**
    *
@@ -487,5 +482,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return false;
     }
   };
-
-}, false);

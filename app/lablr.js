@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+
   const els = [];
 
   /**
@@ -129,4 +129,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   postArrayToServer(els);
 
-});

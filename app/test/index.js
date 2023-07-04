@@ -16,8 +16,13 @@ app.get('/lablr', (req, res) => {
 });
 
 app.post('/lablr', (req, res) => {
+
+  console.log('POST request received');
+
   // Get the request body
   const requestBody = req.body;
+
+  console.log(`Request body length: ${requestBody.length}`);
 
   // Stringify the location data
   requestBody.forEach((obj) => {
@@ -54,5 +59,5 @@ app.post('/lablr', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Lablr Service is running on port ${port}`);
 });
