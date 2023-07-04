@@ -1,5 +1,15 @@
 # LABLR.JS
 
+## Note
+
+This branch has diverged from `develop` in a few ways.
+
+It acts as a POC for the concept of loading the page into Puppeteer and gathering the elements that way.  This is preferred over gathering the elements client-side on the customer's actual website, because doing so would significantly degrade the performance of the customer's site.
+
+
+
+## Prior readme:
+
 Currently this is a POC only.
 
 Lablr.js is the client-side script used to discover labellable elements on a web page, assemble them into an array, and POST them to an endpoint for processing.
@@ -30,4 +40,3 @@ In its current form, it creates an array of objects. Each object contains the fo
 * `outerHtml`: The full HTML for the element and any of its children (currently truncated to 255 characters to reduce payload size)
 * `textContent`: The text content within the image and any of its children
 * `accessibleName`: The calculated accessible name for the element
-
