@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+
   const els = [];
 
   /**
@@ -49,24 +50,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     for (const element of elements) {
-      const { tagName } = element;
-      const { x, y, width, height } = element.getBoundingClientRect();
-      const xpath = getXPath(element);
-      const outerHtml = element.outerHTML.slice(0, 255); // Truncate outerHtml
-      const textContent = element.textContent.trim();
-      const accessibleName = element.getAccessibleName(element);
+      // Skip elements with the className 'lablr-label-added'
+      if (element.classList.contains('lablr-label-added') === false) {
 
-      const obj = {
-        tagName,
-        category,
-        location: { x, y, width, height },
-        xpath,
-        outerHtml,
-        textContent,
-        accessibleName,
-      };
+        const { tagName } = element;
+        const { x, y, width, height } = element.getBoundingClientRect();
+        const xpath = getXPath(element);
+        const outerHtml = element.outerHTML.slice(0, 255); // Truncate outerHtml
+        const textContent = element.textContent.trim();
+        const accessibleName = element.getAccessibleName(element);
 
-      result.push(obj);
+        const obj = {
+          tagName,
+          category,
+          location: { x, y, width, height },
+          xpath,
+          outerHtml,
+          textContent,
+          accessibleName,
+        };
+
+        result.push(obj);
+      }
     }
 
     return result;
@@ -101,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   const selectors = [
-    { selector: '*[alt]', category: 'elsWithAlt' },
+    { selector: '*[alt]:not(img), *[alt]:not([role=img])', category: 'elsWithAlt' }, // Modified selector for elements with alt attributes not being images
     { selector: '*[aria-describedby], *[aria-labelledby]', category: 'elseWithReferencedAria' },
     { selector: '*[aria-label], *[aria-labelledby]', category: 'elsWithAriaLabels' },
     { selector: '*[lang]', category: 'elsWithLangAttr' },
@@ -125,8 +130,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     els.push(...elsArray);
   }
 
-  console.log(els);
+  // Filter the els array to include only unique elements
+  const filteredEls = Object.values(els.reduce((acc, el) => {
+    const key = JSON.stringify(el);
+    if (!acc[key]) {
+      acc[key] = el;
+    }
+    return acc;
+  }, {}));
 
-  postArrayToServer(els);
+  console.log(filteredEls);
+
+  postArrayToServer(filteredEls);
 
 });

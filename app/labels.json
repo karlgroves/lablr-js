@@ -1,0 +1,162 @@
+[
+  {
+    "XPath": "html/body/main/div/button",
+    "accessibleName": "Close"
+  },
+  {
+    "XPath": "html/body/main/div[8]/img",
+    "accessibleName": "An image"
+  },
+  {
+    "XPath": "html/body/main/div[8]/img[2]",
+    "accessibleName": "Another Image"
+  },
+  {
+    "XPath": "html/body/main/div[2]/button",
+    "accessibleName": "Submit"
+  },
+  {
+    "XPath": "html/body/main/div[3]/input",
+    "accessibleName": "Add Record"
+  },
+  {
+    "XPath": "html/body/header/nav/ul/li/a",
+    "accessibleName": "Google"
+  },
+  {
+    "XPath": "html/body/header/nav/ul/li[2]/a",
+    "accessibleName": "Yahoo"
+  },
+  {
+    "XPath": "html/body/header/nav/ul/li[3]/a",
+    "accessibleName": "Altavista"
+  },
+  {
+    "XPath": "html/body/main/div[4]/a",
+    "accessibleName": "Example"
+  },
+  {
+    "XPath": "html/body/main/div[4]/div",
+    "accessibleName": "CNN"
+  },
+  {
+    "XPath": "html/body/main/div[4]/span",
+    "accessibleName": "MSNBC"
+  },
+  {
+    "XPath": "html/body/main/div[4]/a[2]",
+    "accessibleName": "ABC"
+  },
+  {
+    "XPath": "html/body/main/div[4]/div[2]",
+    "accessibleName": "CBS"
+  },
+  {
+    "XPath": "html/body/footer/nav/ul/li/a",
+    "accessibleName": "NBC"
+  },
+  {
+    "XPath": "html/body/main/div[5]/abbr",
+    "accessibleName": "National Aeronautics and Space Administration"
+  },
+  {
+    "XPath": "html/body/main/div/button",
+    "accessibleName": "Close"
+  },
+  {
+    "XPath": "html/body/main/div[3]/input",
+    "accessibleName": "Submit"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div/input",
+    "accessibleName": "Text"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[2]/input",
+    "accessibleName": "Email"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[3]/input",
+    "accessibleName": "Password"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[4]/input",
+    "accessibleName": "Number"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[5]/input",
+    "accessibleName": "Date"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[6]/input",
+    "accessibleName": "Checkbox"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[7]/input",
+    "accessibleName": "Radio"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[8]/select",
+    "accessibleName": "Select"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[9]/textarea",
+    "accessibleName": "Textarea"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[10]/button",
+    "accessibleName": "Submit"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[11]/progress",
+    "accessibleName": "Progress"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[12]/meter",
+    "accessibleName": "Meter"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[13]/output",
+    "accessibleName": "Output"
+  },
+  {
+    "XPath": "html/body/main/div/button",
+    "accessibleName": "Close"
+  },
+  {
+    "XPath": "html/body/main/div[6]/fieldset/div[10]/button",
+    "accessibleName": "Submit"
+  },
+  {
+    "XPath": "html/body/main/div[7]/iframe",
+    "accessibleName": "W3Schools"
+  },
+  {
+    "XPath": "html/body/main/div[8]/img",
+    "accessibleName": "Foo"
+  },
+  {
+    "XPath": "html/body/main/div[8]/img[2]",
+    "accessibleName": "Bar"
+  },
+  {
+    "XPath": "html/body/main/div[8]/div",
+    "accessibleName": "Bat"
+  },
+  {
+    "XPath": "html/body/main/div[8]/div[2]",
+    "accessibleName": "Baz"
+  },
+  {
+    "XPath": "html/body/header/nav",
+    "accessibleName": "Primary Navigation"
+  },
+  {
+    "XPath": "html/body/footer/nav",
+    "accessibleName": "Secondary Navigation"
+  },
+  {
+    "XPath": "html/head/title",
+    "accessibleName": "DEMO"
+  }
+]
