@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   const selectors = [
-    { selector: '*[alt]:not(img), *[alt]:not([role=img])', category: 'elsWithAlt' }, // Modified selector for elements with alt attributes not being images
+    { selector: '*[alt]:not(img), *[alt]:not([role=img])', category: 'elsWithAlt' },
     { selector: '*[aria-describedby], *[aria-labelledby]', category: 'elseWithReferencedAria' },
     { selector: '*[aria-label], *[aria-labelledby]', category: 'elsWithAriaLabels' },
     { selector: '*[lang]', category: 'elsWithLangAttr' },
