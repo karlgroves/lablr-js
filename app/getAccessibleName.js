@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-
   /**
    *
    * @param {*} str

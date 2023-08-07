@@ -1,11 +1,18 @@
 const express = require('express');
-const fs = require('fs');
-const { createObjectCsvWriter } = require('csv-writer');
+const { createPool } = require('mysql2/promise');
 const microtime = require('microtime');
 const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+// Create a MySQL connection pool
+const pool = createPool({
+  host: 'localhost',
+  user: 'lablr',
+  password: '$uP3rm4n!',
+  database: 'lablr',
+});
 
 app.use(cors()); // Enable CORS for all routes
 
@@ -24,32 +31,38 @@ app.post('/lablr', (req, res) => {
     obj.location = JSON.stringify(obj.location);
   });
 
-  // Generate a unique filename using microtime
-  const filename = microtime.now() + '.csv';
+  // Now, let's insert the data into the database table.
+  const table = 'elements'; // Change this to the name of your database table.
 
-  // Create a CSV writer with the dynamic filename
-  const csvWriter = createObjectCsvWriter({
-    path: filename,
-    header: [
-      { id: 'tagName', title: 'Tag Name' },
-      { id: 'category', title: 'Category' },
-      { id: 'location', title: 'Location' },
-      { id: 'xpath', title: 'XPath' },
-      { id: 'outerHtml', title: 'Outer HTML' },
-      { id: 'textContent', title: 'Text Content' },
-      { id: 'accessibleName', title: 'Accessible Name' }
-    ]
-  });
-
-  // Write the request body to the CSV file
-  csvWriter.writeRecords(requestBody)
+  pool.query(`CREATE TABLE IF NOT EXISTS ${table} (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    url MEDIUMTEXT NOT NULL,
+    tagName VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    location JSON NOT NULL,
+    xpath VARCHAR(500),
+    outerHtml TEXT,
+    textContent LONGTEXT,
+    )`)
     .then(() => {
-      console.log(`Request written to CSV file: ${filename}`);
+      // Insert the records into the database table
+      return pool.query(`INSERT INTO ${table} (url, tagName, category, location, xpath, outerHtml, textContent) VALUES ?`, [requestBody.map(item => [
+        item.url,
+        item.tagName,
+        item.category,
+        item.location,
+        item.xpath,
+        item.outerHtml,
+        item.textContent
+      ])]);
+    })
+    .then(() => {
+      console.log(`Request written to database table: ${table}`);
       res.sendStatus(200);
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send('Error writing to file');
+      res.status(500).send('Error writing to database');
     });
 });
 
